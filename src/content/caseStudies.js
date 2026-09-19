@@ -7,61 +7,63 @@ export const caseStudies = [
     title: "The category wasn't an ecommerce category.",
     hand: 'nobody buys a wheelchair from a product page',
     hook:
-      "The site had traffic and almost no leads. Rehab and mobility equipment isn't bought from a product page — it's bought after a conversation. I rebuilt the funnel around a qualified enquiry instead of a cart, and tested the change in two days before moving any budget.",
+      "The site was built to sell products. Every actual sale came through a conversation — a walk-in, or a referral from a physio. There was no ad spend, no conversion tracking, and no way to tell whether digital could produce a lead worth having. I built the channel and the measurement that proved it, at the same time.",
     subtitle:
-      "Traffic was arriving and leaving. The fix wasn't a better ad account — it was admitting the funnel was the wrong shape for the category.",
+      "Not a leaky funnel — no funnel. Zero spend, zero tracking, and a business running entirely on walk-ins and referral partnerships.",
     role: 'Growth, performance marketing, build',
-    timeline: '[START] – [END]',
+    timeline: 'June 2021 — ongoing',
     company: 'Rehamo — rehab & mobility equipment',
 
-    // shown on the teaser card and as the taped strip on the detail page
     metrics: [
       { label: 'Monthly digital leads', value: '0 → 400+' },
       { label: 'Lead → sale', value: '~25%' },
-      { label: 'ROAS', value: '4–5×' },
-      { label: 'Time to validate', value: '2 days' },
+      { label: 'ROAS, closed-loop', value: '4–5×' },
+      { label: 'Time to 400+/mo', value: '<1 year' },
     ],
 
     shortVersion:
-      'The site was built to sell products. The category sells decisions — a physio, a caregiver and a family member all touch the same purchase. I replaced the cart-shaped funnel with a qualified-enquiry funnel, proved it with a two-day landing test before moving budget, then rebuilt acquisition around it.',
+      'Rehamo sold rehab and mobility equipment through walk-ins and physio referrals. The website existed, took around 500–1,000 sessions a month, and produced nothing measurable — no conversion tracking, no internal traffic filter, no ad spend. The real question was not how to get more traffic. It was whether a digital lead could ever be worth as much as a doctor sending someone through the door. I built the acquisition channel and the measurement to answer that, and within the first year it was running at 400+ leads a month closing at roughly 25%.',
 
     situation: [
-      '[TRAFFIC / SESSIONS AT THE TIME] sessions a month and effectively no qualified leads. Spend was going to shopping and product-page traffic; add-to-cart was rare and abandoned when it happened.',
-      '[WHAT THE SALES TEAM WAS SEEING — the calls that did convert, and where they came from.]',
+      'The site took roughly 500–1,000 sessions a month, and that number was inflated — there was no internal traffic filter in place, so staff activity counted as visits. There were no conversion events, no GA4 configuration worth the name, and no way to say what any visitor did next. The honest baseline was not a low number. It was no number.',
+      'Meanwhile the business was working. Sales came from walk-ins and from formal referral partnerships with physiotherapists and doctors — a channel built on trust, where someone qualified has already told the customer what to buy. Nothing about a product page replicates that.',
+      'Nobody had proposed spending on digital, so there was no failure to point at. I proposed it, and management approved the budget.',
     ],
 
     decision: {
       body:
-        'Stop optimising the checkout. Treat the product page as the top of a consultative funnel and measure a qualified enquiry as the conversion, not a transaction.',
+        "Stop treating the website as a shop and start treating it as the top of a consultative funnel — the same conversation a physio referral starts, opened by an ad instead. That meant measuring a qualified enquiry as the conversion rather than a transaction, and counting every route a real customer actually uses: the form, WhatsApp, and the phone.",
       tradeoff:
-        '[WHAT THIS COST — e.g. losing direct ecommerce revenue reporting, or adding load on the sales team.]',
+        "Digital leads close harder than walk-ins. A referred customer arrives already convinced; a digital one needs real follow-up before they buy. I took that trade knowingly — the channel produces volume the referral network can't, but it added follow-up load on the sales team, and the ~25% close rate reflects that.",
     },
 
     test: {
-      intro: 'Two days, before any budget shift.',
+      intro:
+        "There was no clean before-and-after here, and I won't pretend otherwise. Tracking and the first campaigns went live together, and the early data was messy while the instrumentation settled. What I could do was keep the first commitment small and the read honest.",
       steps: [
-        '[STEP — a single enquiry-first landing page for one high-intent category.]',
-        '[STEP — the traffic source and the small budget used to read it.]',
-        '[STEP — the threshold that would have killed the idea.]',
+        'Search only to start. Known intent, controllable, and readable — I could see the query that produced the lead, which is the whole point when you are establishing whether a channel works at all.',
+        'Filter internal traffic in GA4 and build conversion events for every route a customer actually uses — form submission, WhatsApp click, phone tap — before drawing conclusions from any of it.',
+        'Judge the channel on closed sales matched back through billing, not on platform-reported conversions. If the leads did not turn into revenue, the campaigns were not working, whatever Google Ads said.',
       ],
     },
 
     built: {
       body:
-        '[THE BUILD — enquiry flow, lead routing, tracking, whatever shipped. Say which parts you wrote yourself.]',
-      image: null, // e.g. 'images/acquisition-funnel.png' in /public
-      imageAlt: 'Funnel diagram for the enquiry-first flow',
+        "I wrote the enquiry flow myself: a custom React enquiry form, a WhatsApp CTA wired for the customers who prefer messaging, email notifications plus a custom admin dashboard so the sales team saw leads immediately rather than in a weekly export. On the measurement side I configured GTM, built conversion events for each enquiry route, and set the internal traffic filter in GA4 so the numbers meant something. Attribution runs closed-loop — revenue from the billing system, reconciled against CRM records and customer feedback, rather than the figure the ad platform reports about itself.",
+      image: 'images/acquisition-funnel.svg',
+      imageAlt: 'The enquiry flow, from ad to qualified lead',
     },
 
     results: [
       { metric: 'Monthly digital leads', before: '0', after: '400+' },
-      { metric: 'Lead → sale conversion', before: '[BEFORE]', after: '~25%' },
-      { metric: 'ROAS', before: '[BEFORE]', after: '4–5×' },
-      { metric: 'Cost per qualified lead', before: '[BEFORE]', after: '[AFTER]' },
+      { metric: 'Lead → sale conversion (all digital leads)', before: 'Not measured', after: '~25%' },
+      { metric: 'ROAS (billing-matched, not platform-reported)', before: 'No spend', after: '4–5×' },
+      { metric: 'Conversion tracking', before: 'None', after: 'Form, WhatsApp and call events in GA4' },
+      { metric: 'Internal traffic filtering', before: 'None — sessions inflated', after: 'Configured' },
     ],
 
     differently:
-      "[THE HONEST ONE. What took too long, what you'd instrument earlier, what you over-built.]",
+      "I would have got the tracking clean before spending a rupee. Running both at once meant the first months of data were only good enough to steer by, not good enough to learn from, and I cannot now reconstruct what the early campaigns really did. I would also have killed PMax sooner — I gave it time to prove itself on the assumption that the targeting would settle, when the real problem was that I could not see or control who it was reaching. Shopping got cut back for the same reason. For a considered purchase in a referral-driven category, channels that hide the audience from you are the wrong tool, and I could have reasoned my way to that before spending on it.",
 
     documents: [
       { label: '[DOCUMENT NAME] — PRD', href: 'documents/acquisition-prd.pdf' },
