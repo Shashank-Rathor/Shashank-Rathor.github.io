@@ -1,0 +1,33 @@
+:root {
+  /* ground + ink */
+  --wall: #EDEAE0;
+  --paper: #FFFFFF;
+  --paper-quiet: #E4E0D4;
+  --ink: #1A1916;
+  --ink-soft: #3B392F;
+  --ink-muted: #6B6961;
+  --ink-faint: #77746A;
+
+  /* marks */
+  --accent: #1F6B4E;
+  --sticky: #F5D96B;
+  --pin: #C2452A;
+
+  /* rules */
+  --rule: #C9C4B4;
+  --rule-paper: #CFCABA;
+  --rule-dashed: #A8A392;
+
+  /* type */
+  --font-ui: 'Space Grotesk', 'Helvetica Neue', Helvetica, sans-serif;
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-hand: 'Caveat', cursive;
+
+  /* rhythm */
+  --page-x: clamp(20px, 5vw, 72px);
+  --section-gap: clamp(48px, 7vw, 96px);
+  --card-shadow: 0 14px 30px rgba(0, 0, 0, 0.13);
+  --card-shadow-lg: 0 18px 40px rgba(0, 0, 0, 0.16);
+  --radius-pill: 999px;
+  --tap: 48px;
+}
