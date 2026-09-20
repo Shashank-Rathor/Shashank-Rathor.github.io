@@ -73,3 +73,10 @@ h1, h2, h3, h4 { margin: 0; letter-spacing: -0.02em; line-height: 1.05; }
 }
 
 table { width: 100%; border-collapse: collapse; }
+
+/* Certification chips are links when a credential url is set. Border-colour
+   only on hover — they sit in a wrapping row, so movement would shift
+   neighbouring chips. */
+.cert-chip { transition: border-color 140ms ease; }
+.cert-chip:hover,
+.cert-chip:focus-visible { border-color: var(--accent); }
