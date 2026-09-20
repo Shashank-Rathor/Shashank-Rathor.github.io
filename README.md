@@ -60,11 +60,16 @@ Nothing hardcodes a colour outside that file except a few rgba shadows.
 
 - **HashRouter, not BrowserRouter.** GitHub Pages serves static files, so a
   refresh on `/case-study/acquisition` would 404. URLs are `/#/case-study/...`.
-- **Meta tags are set at runtime** by `components/Meta.jsx`. LinkedIn, Slack and
-  Twitter execute JS when scraping, so previews work — but if you want
-  guaranteed previews, pre-render with `vite-plugin-ssg` or paste static OG tags
-  for the home page into `index.html`. The home page tags in `index.html` are
-  already static for that reason.
+- **Link previews come from `index.html`, not from `components/Meta.jsx`.**
+  LinkedIn's and WhatsApp's crawlers do **not** execute JavaScript, so the OG
+  tags Meta.jsx writes at runtime are invisible to them. The home page carries
+  static og:title/description/image/url in `index.html`, duplicated from
+  `site.js` — keep the two in sync. Meta.jsx still sets per-page titles for
+  real browsers and for crawlers that do run JS.
+
+  Case study pages therefore share the home page's preview. Accepted tradeoff:
+  the home URL is the one that gets pasted into applications. Pre-rendering
+  (e.g. `vite-plugin-ssg`) is the fix if per-page previews ever matter.
 - **Tilted cards are removed under 720px and under `prefers-reduced-motion`.**
   Rotation at phone widths causes horizontal overflow.
 - **Projects are deliberately styled flat** — no pin, no tilt, no paper. They
