@@ -113,7 +113,17 @@ export default function CaseStudyDetail({ study, prev, next }) {
           <div className="sheet" style={{ padding: '18px', transform: 'rotate(0.4deg)' }}>
             <span aria-hidden="true" className="sheet__pin" />
             {study.built.image ? (
-              <img src={asset(study.built.image)} alt={study.built.imageAlt} />
+              // 1600px diagrams scale to ~300px on a phone, which puts their
+              // smallest labels at ~2px. Tapping opens the SVG on its own so
+              // it can be pinch-zoomed.
+              <a
+                href={asset(study.built.image)}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ display: 'block', cursor: 'zoom-in' }}
+              >
+                <img src={asset(study.built.image)} alt={study.built.imageAlt} />
+              </a>
             ) : (
               <div
                 style={{
