@@ -6,14 +6,12 @@ import SectionHeading from '../components/SectionHeading';
 import CaseStudyCard from '../components/CaseStudyCard';
 import CapabilityColumn from '../components/CapabilityColumn';
 import ProjectCard from '../components/ProjectCard';
-import PostCard from '../components/PostCard';
 import CertBadge from '../components/CertBadge';
 
 import { site } from '../content/site';
 import { caseStudies } from '../content/caseStudies';
 import { capabilities } from '../content/capabilities';
 import { projects } from '../content/projects';
-import { posts } from '../content/posts';
 import { certifications } from '../content/certifications';
 
 export default function Home() {
@@ -58,31 +56,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="writing" className="section">
-        <div className="wrap" style={{ display: 'flex', flexDirection: 'column', gap: '34px' }}>
-          <SectionHeading
-            number="04"
-            title="Writing"
-            action={
-              <a href={site.linkedin} target="_blank" rel="noreferrer" style={{ color: 'var(--accent)', fontSize: '15px' }}>
-                All posts on LinkedIn →
-              </a>
-            }
-          />
-          <div className="grid-3">
-            {posts.slice(0, 3).map((p, i) => (
-              <PostCard key={p.id} post={p} tilt={[-1.4, 0.9, -0.7][i % 3]} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section id="certifications" className="section">
         <div className="wrap" style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
-          <SectionHeading number="05" title="Certifications" />
+          <SectionHeading number="04" title="Certifications" />
           <ul style={{ display: 'flex', flexWrap: 'wrap', gap: '14px', margin: 0, padding: 0, listStyle: 'none' }}>
             {certifications.map((c, i) => (
-              <CertBadge key={c} label={c} tilt={[-0.8, 0.6, -0.5, 0.9, -0.7][i % 5]} />
+              <CertBadge key={c.id} certification={c} tilt={[-0.8, 0.6, -0.5, 0.9, -0.7][i % 5]} />
             ))}
           </ul>
         </div>

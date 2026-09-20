@@ -10,6 +10,7 @@ export const site = {
 
   email: 'shashankrathor180@gmail.com',
   linkedin: 'https://www.linkedin.com/in/shashank180/',
+  writing: 'https://www.linkedin.com/in/shashank180/recent-activity/all/',
   resume: 'documents/shashank-resume.pdf',
 
   // absolute URL of the deployed site, used for OG tags
@@ -28,7 +29,6 @@ export const site = {
     { label: 'Case studies', href: '#work' },
     { label: 'What I do', href: '#capabilities' },
     { label: 'Projects', href: '#projects' },
-    { label: 'Writing', href: '#writing' },
     { label: 'Contact', href: '#contact' },
   ],
 };
