@@ -79,7 +79,7 @@ export const caseStudies = [
     hook:
       "I built a minimal CRM to find out what we should actually buy. Two years of real usage showed the binding constraint wasn't sales record-keeping at all — it was six teams handing the same case down a chain with no shared record. The worst handoff wasn't broken. It didn't exist: service found out a case existed when the customer rang to complain.",
     subtitle:
-      "Buy a CRM before you understand your process and you shape your process around the software. So I built the cheapest possible version first, and let a year of real use write the requirements.",
+      "Buy a CRM before you understand your process and you shape your process around the software. So I built the cheapest possible version first, and let two years of real use write the requirements.",
     role: 'Product, discovery, build',
     timeline: '2024 — build · operated ~2 years · 2026 — replace decision · Zoho rollout ongoing',
     company: 'Rehamo — rehab & mobility equipment',
