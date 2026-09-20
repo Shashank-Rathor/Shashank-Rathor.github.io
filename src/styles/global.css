@@ -80,3 +80,13 @@ table { width: 100%; border-collapse: collapse; }
 .cert-chip { transition: border-color 140ms ease; }
 .cert-chip:hover,
 .cert-chip:focus-visible { border-color: var(--accent); }
+
+/* The taped strip's corners overhang the sheet. At phone widths that overhang
+   cleared the viewport and produced ~8px of horizontal scroll, so it tucks in
+   rather than disappearing — the tape is part of the design language. */
+.tape--left { left: -24px; }
+.tape--right { right: -24px; }
+@media (max-width: 720px) {
+  .tape--left { left: -8px; }
+  .tape--right { right: -8px; }
+}

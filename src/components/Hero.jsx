@@ -146,6 +146,25 @@ export default function Hero() {
           </CTAButton>
         </div>
 
+
+        {/* Narrow screens get two scraps in the flow — the absolute ones have
+            no margin to live in below 1280px. */}
+        <div className="hero-mobile-scraps">
+          <div className="hero-stub" style={{ transform: 'rotate(-2deg)' }}>
+            <span className="hero-stub__num">{s.stub.value}</span>
+            <span className="hero-stub__label">
+              {s.stub.label[0]}
+              <br />
+              {s.stub.label[1]}
+            </span>
+          </div>
+          <div className="sheet sheet--sticky hero-mobile-note" style={{ transform: 'rotate(1.5deg)' }}>
+            <span aria-hidden="true" className="sheet__pin" />
+            <span className="hand" style={{ fontSize: '22px', lineHeight: 1.15 }}>{s.notes[0].text}</span>
+            <span style={{ ...kicker, marginTop: '8px' }}>{s.notes[0].kicker}</span>
+          </div>
+        </div>
+
         <ul className="hero-stack">
           {site.stack.map((t, i) => (
             <li key={t} style={{ transform: `rotate(${i % 2 ? 1 : -1.3}deg)` }}>{t}</li>
@@ -183,8 +202,22 @@ export default function Hero() {
           padding: 7px 12px; box-shadow: var(--card-shadow);
         }
 
+
+        .hero-mobile-scraps { display: none; }
+        .hero-mobile-note {
+          width: 100%; max-width: 300px; padding: 18px 16px;
+          display: flex; flex-direction: column;
+        }
+        @media (max-width: 1279px) {
+          .hero-mobile-scraps {
+            display: flex; flex-direction: column; align-items: center;
+            gap: 22px; margin-top: 30px;
+          }
+        }
+
         /* The pinboard: full height, centred, capped. Scrap left/right
-           offsets resolve against this, not the viewport. */
+           offsets resolve against this, not the viewport, so they stay
+           clustered around the headline on wide monitors. */
         .hero-board {
           position: absolute;
           top: 0;
@@ -198,7 +231,6 @@ export default function Hero() {
         .hero-board > * { pointer-events: auto; }
 
         /* --- the pinned furniture --- */
-        .hero-scrap { display: none; }
         .hero-note { width: 216px; padding: 20px 18px; display: flex; flex-direction: column; }
         .hero-card { width: 234px; padding: 18px; }
         .hero-arrows {
@@ -234,7 +266,15 @@ export default function Hero() {
         }
 
         /* Scraps only exist where there's room for them. Below this the hero
-           is the headline stack alone — the scraps would overlap the copy. */
+           is the headline stack alone — the scraps would overlap the copy,
+           and .hero-mobile-scraps takes over.
+
+           This declaration sits AFTER the rules above deliberately: .hero-note,
+           .hero-stub and .hero-stamp each set their own display, and at equal
+           specificity the later rule wins. Declared earlier, it loses — and
+           five desktop scraps leak onto phones alongside the mobile pair. */
+        .hero-scrap { display: none; }
+
         @media (min-width: 1280px) {
           .hero { min-height: 820px; }
           .hero-scrap { display: flex; }
