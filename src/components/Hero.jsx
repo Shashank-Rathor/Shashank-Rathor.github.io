@@ -64,7 +64,7 @@ export default function Hero() {
         </div>
 
         <div className="hero-scrap hero-code" style={at(s.code)}>
-          <span style={{ ...kicker, display: 'block', marginBottom: '8px', color: '#6B6961' }}>{s.code.caption}</span>
+          <span style={{ ...kicker, display: 'block', marginBottom: '8px', color: '#A9A69A' }}>{s.code.caption}</span>
           <code>
             {s.code.line1}
             <br />
@@ -243,13 +243,14 @@ export default function Hero() {
           z-index: 1; pointer-events: none;
         }
         .hero-code {
-          width: 238px; padding: 14px 16px;
+          width: 260px; padding: 14px 16px;
           background: #17160F; border: 1px solid #3A3930;
           box-shadow: var(--card-shadow);
         }
         .hero-code code {
           display: block; font-family: ui-monospace, Menlo, Consolas, monospace;
           font-size: 12px; line-height: 1.7; color: #C9C6B8;
+          overflow-wrap: break-word;
         }
         .hero-stub {
           display: flex; align-items: stretch; box-shadow: var(--card-shadow);
@@ -283,7 +284,11 @@ export default function Hero() {
         @media (min-width: 1280px) {
           .hero { min-height: 820px; }
           .hero-scrap { display: flex; }
+          /* These two stack their own children, so they opt out of the flex
+             row above. Without this .hero-code laid its caption and its code
+             block side by side and the code ran past the box. */
           .hero-card { display: block; }
+          .hero-code { display: block; }
           .hero-arrows { display: block; }
         }
 
