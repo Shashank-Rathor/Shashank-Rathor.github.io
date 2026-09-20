@@ -175,6 +175,11 @@ export default function Hero() {
       <style>{`
         .hero {
           position: relative;
+          /* clip, not hidden: hidden makes this a scroll container, which
+             breaks position: sticky on the nav. clip doesn't. Contains the
+             few pixels the rotated scraps push past the edge between about
+             1280px and 1460px. */
+          overflow-x: clip;
           padding: clamp(32px, 6vw, 60px) var(--page-x) clamp(40px, 6vw, 64px);
           min-height: 640px;
         }
