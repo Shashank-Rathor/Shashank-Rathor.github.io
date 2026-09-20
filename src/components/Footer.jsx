@@ -40,9 +40,6 @@ export default function Footer() {
           <a href={site.linkedin} style={link} target="_blank" rel="noreferrer">
             LinkedIn →
           </a>
-          <a href={site.github} style={link} target="_blank" rel="noreferrer">
-            GitHub →
-          </a>
           <a
             href={asset(site.resume)}
             download

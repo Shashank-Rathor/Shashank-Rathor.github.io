@@ -10,7 +10,6 @@ export const site = {
 
   email: 'shashankrathor180@gmail.com',
   linkedin: 'https://www.linkedin.com/in/shashank180/',
-  github: 'https://github.com/Shashank-Rathor',
   resume: 'documents/shashank-resume.pdf',
 
   // absolute URL of the deployed site, used for OG tags
