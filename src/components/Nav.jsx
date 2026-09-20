@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { site } from '../content/site';
 import { asset } from '../lib/asset';
+import { scrollToSection } from '../lib/scrollToSection';
 
 /**
  * Sticky nav with anchor links and active-section highlighting.
@@ -64,6 +65,7 @@ export default function Nav({ anchors = true }) {
                 <a
                   key={n.href}
                   href={n.href}
+                  onClick={(e) => scrollToSection(e, n.href)}
                   aria-current={isActive ? 'true' : undefined}
                   style={{
                     fontSize: '14px',
@@ -126,7 +128,10 @@ export default function Nav({ anchors = true }) {
             <a
               key={n.href}
               href={n.href}
-              onClick={() => setOpen(false)}
+              onClick={(e) => {
+                scrollToSection(e, n.href);
+                setOpen(false);
+              }}
               style={{ padding: '14px 0', borderBottom: '1px solid var(--rule)', fontSize: '16px' }}
             >
               {n.label}

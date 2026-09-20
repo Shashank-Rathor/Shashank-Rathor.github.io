@@ -1,3 +1,5 @@
+import { scrollToSection } from '../lib/scrollToSection';
+
 const base = {
   display: 'inline-flex',
   alignItems: 'center',
@@ -24,7 +26,12 @@ const variants = {
 
 export default function CTAButton({ href, variant = 'primary', children, ...rest }) {
   return (
-    <a href={href} style={{ ...base, ...variants[variant] }} {...rest}>
+    <a
+      href={href}
+      onClick={(e) => scrollToSection(e, href)}
+      style={{ ...base, ...variants[variant] }}
+      {...rest}
+    >
       {children}
     </a>
   );
