@@ -27,7 +27,8 @@ export const caseStudies = [
     situation: [
       'The site took roughly 500–1,000 sessions a month, and that number was inflated — there was no internal traffic filter in place, so staff activity counted as visits. There were no conversion events, no GA4 configuration worth the name, and no way to say what any visitor did next. The honest baseline was not a low number. It was no number.',
       'Meanwhile the business was working. Sales came from walk-ins and from formal referral partnerships with physiotherapists and doctors — a channel built on trust, where someone qualified has already told the customer what to buy. Nothing about a product page replicates that.',
-      'Nobody had proposed spending on digital, so there was no failure to point at. I proposed it, and management approved the budget.',
+      'Once baseline tracking was in, the signal was immediate: Search Console showed impressions and clicks landing on product pages, and GA showed a very high bounce rate. People were arriving and leaving. I took that to inside sales, the store team and customers, and the answer was consistent — they wanted to consult someone who understood the condition before they bought anything. The category was not refusing to convert. It was refusing to convert the way the site was built.',
+      "Nobody had proposed spending on digital, so there was no failure to point at. I proposed it, argued it on category keyword volume and on competitors sustaining paid ads and top rankings on those terms, and asked for a deliberately small and stoppable budget. Management approved it.",
     ],
 
     decision: {
@@ -39,11 +40,11 @@ export const caseStudies = [
 
     test: {
       intro:
-        "There was no clean before-and-after here, and I won't pretend otherwise. Tracking and the first campaigns went live together, and the early data was messy while the instrumentation settled. What I could do was keep the first commitment small and the read honest.",
+        "Two things are true here and I'd rather say both. The measurement was not clean — tracking and spend went live in the same period, so the first months were good enough to steer by and not good enough to learn from. The rollout itself was staged and stoppable at every point.",
       steps: [
-        'Search only to start. Known intent, controllable, and readable — I could see the query that produced the lead, which is the whole point when you are establishing whether a channel works at all.',
-        'Filter internal traffic in GA4 and build conversion events for every route a customer actually uses — form submission, WhatsApp click, phone tap — before drawing conclusions from any of it.',
-        'Judge the channel on closed sales matched back through billing, not on platform-reported conversions. If the leads did not turn into revenue, the campaigns were not working, whatever Google Ads said.',
+        'Consultative CTAs — WhatsApp, call, email — tested on a few product categories for a few weeks before anything went site-wide. Cheap to run, cheap to abandon.',
+        'Paid started Search-only on a small budget. Known intent, controllable, and readable — I could see which query produced which enquiry, which is the whole point when you are establishing whether a channel works at all.',
+        'Scaling decisions ran on billing-matched revenue, not platform-reported conversions. If the leads did not become sales, the campaigns were not working, whatever Google Ads said.',
       ],
     },
 
