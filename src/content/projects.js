@@ -10,8 +10,8 @@ export const projects = [
     id: 'rehamo',
     title: 'Rehamo.com platform',
     blurb:
-      'The healthcare e-commerce platform itself — catalogue, enquiry flow, content and admin. Sole developer, from schema to deploy.',
-    tags: ['React', 'Express', 'MongoDB'],
+      'Customer-facing platform I own end to end, from product decisions to build. Enquiry-led around how caregivers buy. 400+ qualified leads/month.',
+    tags: ['Product', 'React', 'Express', 'MongoDB'],
   },
   {
     id: 'crm',

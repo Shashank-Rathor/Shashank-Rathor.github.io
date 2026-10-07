@@ -55,6 +55,33 @@ export const caseStudies = [
       imageAlt: 'The acquisition funnel: search ad through to sale, with the measurement layer beneath',
     },
 
+    // Rendered between "What I built" and "Results". Optional: the detail
+    // page only renders this block for case studies that define it.
+    productDecisions: {
+      intro:
+        'Rehamo.com was built around how caregivers actually buy high-value rehab and mobility equipment: anxious, unsure of sizes and specs, and used to a clinician telling them where to go. Four decisions shaped the platform.',
+      decisions: [
+        {
+          title: 'Enquiry-led, not checkout-led',
+          body: 'Buyers need a conversation before spending on a wheelchair or CPAP machine. So the site was designed to start that conversation, not to push an online checkout.',
+        },
+        {
+          title: 'Every enquiry route counts',
+          body: "Most buyers don't want to fill a form; they want to ask a question. So the site offers form, WhatsApp and call, and all three are tracked as enquiries.",
+        },
+        {
+          title: 'Name products the way buyers search',
+          body: 'Families search in their own words, not catalogue terms. Testing names like "CP wheelchair" vs "stroller for disabled children" shaped how products are named and found.',
+        },
+        {
+          title: "Reviews replace the clinician's recommendation",
+          body: "Online, there's no therapist vouching for the store. 2,000+ Google reviews took that role, so trust was built into the journey rather than added later.",
+        },
+      ],
+      closing:
+        'The result: an enquiry-led platform generating 400+ qualified leads a month at ~25% lead-to-sale.',
+    },
+
     results: [
       { metric: 'Monthly digital leads', before: '0', after: '400+' },
       { metric: 'Lead → sale conversion (all digital leads)', before: 'Not measured', after: '~25%' },

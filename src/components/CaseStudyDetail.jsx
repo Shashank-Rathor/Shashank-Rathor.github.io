@@ -145,6 +145,23 @@ export default function CaseStudyDetail({ study, prev, next }) {
           </div>
         </Block>
 
+        {study.productDecisions && (
+          <Block label="Product decisions">
+            <p style={body}>{study.productDecisions.intro}</p>
+            <ol className="cs-steps cs-steps--pairs">
+              {study.productDecisions.decisions.map((d, i) => (
+                <li key={d.title} className="sheet" style={{ padding: '22px 20px', transform: `rotate(${i % 2 ? 0.9 : -1}deg)` }}>
+                  <span aria-hidden="true" className="sheet__pin" />
+                  <span className="num" style={{ fontSize: '30px' }}>{String(i + 1).padStart(2, '0')}</span>
+                  <h3 style={{ margin: '6px 0 0', fontSize: '17px', fontWeight: 700, lineHeight: 1.25 }}>{d.title}</h3>
+                  <p style={{ margin: '6px 0 0', fontSize: '15px', lineHeight: 1.55 }}>{d.body}</p>
+                </li>
+              ))}
+            </ol>
+            <p style={body}>{study.productDecisions.closing}</p>
+          </Block>
+        )}
+
         <Block label="Results">
           <div className="sheet" style={{ padding: 'clamp(20px, 3vw, 34px)', transform: 'rotate(-0.4deg)', overflowX: 'auto' }}>
             <span aria-hidden="true" className="sheet__pin" />
@@ -193,6 +210,8 @@ export default function CaseStudyDetail({ study, prev, next }) {
           display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
           margin: 0; padding: 0; list-style: none;
         }
+        /* Four items sit 2x2 rather than 3 + 1 orphan. */
+        .cs-steps--pairs { grid-template-columns: repeat(2, 1fr); }
         .cs-nav {
           display: grid; grid-template-columns: 1fr 1fr;
           border-top: 1px solid var(--rule); margin-top: var(--section-gap);
