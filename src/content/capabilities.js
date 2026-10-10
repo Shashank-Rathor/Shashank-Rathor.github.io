@@ -3,7 +3,8 @@ export const capabilities = [
     id: 'growth',
     title: 'Growth & Performance Marketing',
     skills: [
-      'Google Ads — Search, PMax, Shopping',
+      // Search-led, not PMax: case study 01 records PMax being killed.
+      'Google Ads — Search-led, Shopping',
       'Meta Ads & paid social',
       'Funnel diagnosis & CRO',
       'GA4, GTM, server-side events',

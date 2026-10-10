@@ -18,7 +18,7 @@ export const certifications = [
   },
   {
     id: 'cro',
-    label: 'Conversion Optimisation',
+    label: 'Conversion Optimization',
     issuer: 'Google Skillshop',
     year: '2026',
     url: '',

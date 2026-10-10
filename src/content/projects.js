@@ -24,7 +24,7 @@ export const projects = [
     id: 'healthshine',
     title: 'Healthshine B2B site',
     blurb:
-      'A B2B storefront and enquiry site for the distribution side of the business. Defined the IA and inquiry pathways for hospital and distributor buyers, who evaluate very differently from consumers.',
+      'A B2B storefront and enquiry site for the distribution side of the business. Defined the IA and enquiry pathways for hospital and distributor buyers, who evaluate very differently from consumers.',
     tags: ['WordPress', 'SEO'],
   },
 ];

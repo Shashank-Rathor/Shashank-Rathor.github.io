@@ -5,6 +5,11 @@ export const site = {
   companyNote: 'healthcare e-commerce',
   location: 'Bengaluru, India',
   positioning: 'I change how a funnel works, not just what runs through it.',
+  // Second sentence of the hero intro. Lives here, not in Hero.jsx.
+  heroIntro:
+    'Six years owning acquisition end to end at Rehamo — product owner and sole developer of the platform it runs on.',
+  // Appended to the footer credit line.
+  availability: 'Open to Delhi NCR',
   tagline: 'build it → measure it → prove it',
   headline: ['GROWTH', 'THAT', 'COMPOUNDS'],
 

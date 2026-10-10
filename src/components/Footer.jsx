@@ -79,6 +79,7 @@ export default function Footer() {
       >
         <span style={{ fontSize: '13px', color: '#A9A69A' }}>
           {site.name} · {site.role} · {site.location}
+          {site.availability ? ` · ${site.availability}` : ''}
         </span>
         <span style={{ fontSize: '13px', color: '#A9A69A' }}>
           Built and deployed by me · React · Vite · GitHub Pages

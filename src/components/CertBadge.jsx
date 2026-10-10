@@ -11,16 +11,14 @@
 export default function CertBadge({ certification, tilt = -0.8 }) {
   const { label, issuer, year, url } = certification;
 
+  // One flex item, not two. As separate items the leading space in the
+  // separator collapsed at the item boundary and the em-dash rendered flush
+  // against a line break. Keeping it in a single inline flow preserves it.
   const content = (
-    <>
+    <span>
       {label}
-      <span style={{ color: 'var(--ink-muted)' }}>
-        {' — '}
-        {issuer}
-        {' · '}
-        {year}
-      </span>
-    </>
+      <span style={{ color: 'var(--ink-muted)' }}>{` — ${issuer} · ${year}`}</span>
+    </span>
   );
 
   const style = {

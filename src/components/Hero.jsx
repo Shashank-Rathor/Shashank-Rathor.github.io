@@ -135,8 +135,7 @@ export default function Hero() {
         </p>
 
         <p style={{ maxWidth: '620px', textAlign: 'center', fontSize: '17px', lineHeight: 1.6, color: 'var(--ink-soft)' }}>
-          {site.positioning} Six years owning acquisition end to end at {site.company} — and the sole
-          developer of the platform it runs on.
+          {site.positioning} {site.heroIntro}
         </p>
 
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', justifyContent: 'center', marginTop: '10px' }}>
